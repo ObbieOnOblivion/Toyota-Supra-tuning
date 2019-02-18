@@ -309,6 +309,8 @@ class ToyotaSupra(ToyotaSupraInternals):
         self.buust = {}
         self.tyre_type = "Drag Radials"
         self.fuel_type = "89 Octane"
+        self.tsd1 = {}
+
 
     # use these functions to help assisgt the changing a variables in the window
 
@@ -350,6 +352,69 @@ class ToyotaSupra(ToyotaSupraInternals):
                     self.fuel_type = fuel
                     break
             break
+
+    def tsd_set1(self, number=None):
+        # this is for the eigth mile
+
+        for i in range(4200, 4501, 100):
+            dict1 = dict()
+            dict1["1"] = 1.32  # above 25
+            dict1["2"] = 1.17  # 22 - 25
+            dict1["3"] = 1.11  # 19 - 22
+            dict1["4"] = 1.05  # 17-19
+            dict1["5"] = 1.00  # 17
+            dict1["6"] = .98  # 15-17
+            dict1["7"] = 1.04  # 12-15
+            dict1["8"] = 1.14  # bellow 12
+
+            self.tsd1[i] = dict1
+
+            # each other section for each two-step range
+            # the subsection is for tyre pressures
+
+        # print(self.tsd1.items())
+
+        for i in range(4000, 4200, 100):
+            dict2 = dict()
+            dict2["1"] = 1.27  # above 25
+            dict2["2"] = 1.15  # 22 - 25
+            dict2["3"] = 1.10  # 19 - 22
+            dict2["4"] = 1.04  # 17-19
+            dict2["5"] = 1.03  # 17
+            dict2["6"] = 1.01  # 15-17
+            dict2["7"] = 1.07  # 12-15
+            dict2["8"] = 1.24  # bellow 12
+
+            self.tsd1[i] = dict2
+
+        # print(self.tsd1.items())
+
+        for i in range(3700, 4000, 100):
+            dict3 = dict()
+            dict3["1"] = 1.17  # above 25
+            dict3["2"] = 1.09  # 22 - 25
+            dict3["3"] = 1.02  # 19 - 22
+            dict3["4"] = 1.009  # 17-19
+            dict3["5"] = 1.07  # 17
+            dict3["6"] = 1.11  # 15-17
+            dict3["7"] = 1.21  # 12-15
+            dict3["8"] = 1.34  # bellow 12
+
+            self.tsd1[i] = dict3
+
+        for i in range(3500, 4000, 100):
+            dict4 = dict()
+            dict4["1"] = 1.21  # above 25
+            dict4["2"] = 1.17  # 22 - 25
+            dict4["3"] = 1.11  # 19 - 22
+            dict4["4"] = 1.09  # 17-19
+            dict4["5"] = 1.03  # 17
+            dict4["6"] = 1.11  # 15-17
+            dict4["7"] = 1.27  # 12-15
+            dict4["8"] = 1.44  # bellow 12
+
+            self.tsd1[i] = dict4
+
 
 
 OBBIE = ToyotaSupra()
