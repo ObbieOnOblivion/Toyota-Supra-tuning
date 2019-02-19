@@ -358,7 +358,7 @@ class ToyotaSupra(ToyotaSupraInternals):
 
         for i in range(4200, 4501, 100):
             dict1 = dict()
-            dict1["1"] = 1.32  # above 25
+            dict1["1"] = 1.20  # above 25
             dict1["2"] = 1.17  # 22 - 25
             dict1["3"] = 1.11  # 19 - 22
             dict1["4"] = 1.05  # 17-19
@@ -376,7 +376,7 @@ class ToyotaSupra(ToyotaSupraInternals):
 
         for i in range(4000, 4200, 100):
             dict2 = dict()
-            dict2["1"] = 1.27  # above 25
+            dict2["1"] = 1.21  # above 25
             dict2["2"] = 1.15  # 22 - 25
             dict2["3"] = 1.10  # 19 - 22
             dict2["4"] = 1.04  # 17-19
@@ -391,7 +391,7 @@ class ToyotaSupra(ToyotaSupraInternals):
 
         for i in range(3700, 4000, 100):
             dict3 = dict()
-            dict3["1"] = 1.17  # above 25
+            dict3["1"] = 1.12  # above 25
             dict3["2"] = 1.09  # 22 - 25
             dict3["3"] = 1.02  # 19 - 22
             dict3["4"] = 1.009  # 17-19
