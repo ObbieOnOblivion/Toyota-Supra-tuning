@@ -66,15 +66,43 @@ class HP:
     @staticmethod
     def get_q_time():
 
-        time = 1517.00
+        time101 = 1517.00
         for i in range(0, int(HP.get_number2())):
-            time -= .47
+            time101 -= .47
 
-        time = time / 100
+        time101 = time101 / 100
 
-        time = str(time)[0:6]
+        time101 = float(time101)
 
-        return str(time)
+        v3.OBBIE.tsd_set1()
+
+        if v3.OBBIE.tyre_pressure > 25:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['1']
+
+        if 22 < v3.OBBIE.tyre_pressure <= 25:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['2']
+
+        if 19 < v3.OBBIE.tyre_pressure <= 22:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['3']
+
+        if 17 < v3.OBBIE.tyre_pressure <= 19:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['4']
+
+        if v3.OBBIE.tyre_pressure == 17:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['5']
+
+        if 15 <= v3.OBBIE.tyre_pressure < 17:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['6']
+
+        if 12 <= v3.OBBIE.tyre_pressure < 15:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['7']
+
+        if v3.OBBIE.tyre_pressure < 12:
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['8']
+
+        time101 = str(time101)[0:6]
+
+        return str(time101)
 
         # tyme = 1000.00
         # for i in range(0, HP.get_number()):
@@ -100,7 +128,32 @@ class HP:
         number1 = float(HP.get_q_time())
         number2 = (number1 * 0.623816674) + .188614263
 
-        # for each simulator number we will generate or apply tyre pressures and two step rpm
+        v3.OBBIE.tsd_set1()
+
+        if v3.OBBIE.tyre_pressure > 25:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['1']
+
+        if 22 < v3.OBBIE.tyre_pressure <= 25:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['2']
+
+        if 19 < v3.OBBIE.tyre_pressure <= 22:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['3']
+
+        if 17 < v3.OBBIE.tyre_pressure <= 19:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['4']
+
+        if v3.OBBIE.tyre_pressure == 17:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['5']
+
+        if 15 <= v3.OBBIE.tyre_pressure < 17:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['6']
+
+        if 12 <= v3.OBBIE.tyre_pressure < 15:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['7']
+
+        if v3.OBBIE.tyre_pressure < 12:
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['8']
+
 
         return number2
 
