@@ -120,11 +120,34 @@ class HP:
         time1 = HP.get_q_time()
         time2 = float(time1) * 1.526135063
 
+        if v3.OBBIE.tyre_pressure > 28:
+            time2 = time2 * 1.09
+
+        if 25 < v3.OBBIE.tyre_pressure <= 28:
+            time2 = time2 * 1.07
+
+        if 22 < v3.OBBIE.tyre_pressure <= 25:
+            time2 = time2 * 1.04
+
+        if 20 < v3.OBBIE.tyre_pressure <= 22:
+            time2 = time2 * .97
+
+        if v3.OBBIE.tyre_pressure == 20:
+            time2 = time2 * 1.03
+
+        if 18 <= v3.OBBIE.tyre_pressure < 20:
+            time2 = time2 * 1.04
+
+        if 15 <= v3.OBBIE.tyre_pressure < 18:
+            time2 = time2 * 1.09
+
+        if v3.OBBIE.tyre_pressure < 15:
+            time2 = time2 * 1.11
+
         return time2
 
     @staticmethod
     def get_eighth_time():
-        import math
         number1 = float(HP.get_q_time())
         number2 = (number1 * 0.623816674) + .188614263
 
@@ -449,7 +472,7 @@ def click_7():
     Mane.mainloop()
 
 
-def click_8(): # more advanced fuel set up
+def click_8():  # more advanced fuel set up
     def close_click():
         Mane.destroy()
 
