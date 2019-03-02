@@ -5,8 +5,10 @@ import my_function_3
 
 
 class ToyotaSupraInternals:
+""" anything thing that cant be tuned and the features of the car 
 
-    """ anything thing that cant be tuned and the features of the car """
+Attributes:
+    turbo()"""
 
     DragCoefficient = .320
     CurbWeight = 3434
