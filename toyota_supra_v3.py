@@ -8,7 +8,16 @@ class ToyotaSupraInternals:
 """ anything thing that cant be tuned and the features of the car 
 
 Attributes:
-    turbo()"""
+    turbo(str): The name of the turbo
+    turbo_type(str): The type of the turbo 
+    transmition(str): this shows the general type of the transmission not the exact make or model 
+    gear1_ratio(float): this is the first gear ratio, or the trans ratio 
+    gear2_ratio(flaot): this is the second gear ratio.
+    gear3_ratio(flaot): this is the third gear ratio.
+    gear4_ratio(flaot): this is the forth gear ratio.
+    gear5_ratio(flaot): this is the fifth gear ratio.
+    gear6_ratio(flaot): this is the sixth gear ratio.
+    """
 
     DragCoefficient = .320
     CurbWeight = 3434
