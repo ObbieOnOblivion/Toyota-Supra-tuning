@@ -7,3 +7,5 @@ the same folder. Make sure that folder contains a "venv" file and most likely a 
 
 # How to run 
 Click on the RunApp.py module. Then uncomment the dunder name == main code that fits your liking. 
+The code that runs the use_screen() method is the application.
+
