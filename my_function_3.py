@@ -845,18 +845,37 @@ def click_18():
 def click_19():
     import tkinter
     Main = tkinter.Tk()
-    Main.geometry('500x500-26-100')
+    Main.geometry('800x300-26-100')
     Main.title('Extra info')
 
     label1 = tkinter.Label(Main, text='cars weight')
-
     label2 = tkinter.Label(Main, text='tyre diameter')
-
     label3 = tkinter.Label(Main, text='gutted weight')
+    label4 = tkinter.Label(Main, text='turbo information')
+    label5 = tkinter.Label(Main, text=f'{v3.Scotty.weight}')
+    label6 = tkinter.Label(Main, text=f'{v3.Scotty.tire_diameter}')
+    label7 = tkinter.Label(Main, text=f'{v3.Scotty.gutted_weight}')
+    label8 = tkinter.Label(Main, text=f'{v3.Scotty.turbo}')
+    label9 = tkinter.Label(Main, text=f'Type:\n{v3.Scotty.turbo_type}')
 
-    label4 = tkinter.Label(Main, text='')
+    label1.grid(column=0, row=0)
+    label2.grid(column=1, row=0)
+    label3.grid(column=2, row=0)
+    label4.grid(column=3, row=0)
+    label5.grid(column=0, row=1)
+    label6.grid(column=1, row=1)
+    label7.grid(column=2, row=1)
+    label8.grid(column=3, row=1)
+    label9.grid(column=3, row=2)
 
+    Main.rowconfigure(0, weight=10)
+    Main.rowconfigure(1, weight=10)
+    Main.rowconfigure(2, weight=10)
 
+    Main.columnconfigure(0, weight=10)
+    Main.columnconfigure(1, weight=10)
+    Main.columnconfigure(2, weight=10)
+    Main.columnconfigure(3, weight=10)
 
     Main.mainloop()
 
