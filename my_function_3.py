@@ -842,6 +842,25 @@ def click_18():
     Main.rowconfigure(1, weight=5)
 
 
+def click_19():
+    import tkinter
+    Main = tkinter.Tk()
+    Main.geometry('500x500-26-100')
+    Main.title('Extra info')
+
+    label1 = tkinter.Label(Main, text='cars weight')
+
+    label2 = tkinter.Label(Main, text='tyre diameter')
+
+    label3 = tkinter.Label(Main, text='gutted weight')
+
+    label4 = tkinter.Label(Main, text='')
+
+
+
+    Main.mainloop()
+
+
 
 
 
