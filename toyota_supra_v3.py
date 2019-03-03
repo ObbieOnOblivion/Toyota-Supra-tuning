@@ -5,19 +5,27 @@ import my_function_3
 
 
 class ToyotaSupraInternals:
-""" anything thing that cant be tuned and the features of the car 
+    """ anything thing that cant be tuned and the features of the car
 
-Attributes:
-    turbo(str): The name of the turbo
-    turbo_type(str): The type of the turbo 
-    transmition(str): this shows the general type of the transmission not the exact make or model 
-    gear1_ratio(float): this is the first gear ratio, or the trans ratio 
-    gear2_ratio(flaot): this is the second gear ratio.
-    gear3_ratio(flaot): this is the third gear ratio.
-    gear4_ratio(flaot): this is the forth gear ratio.
-    gear5_ratio(flaot): this is the fifth gear ratio.
-    gear6_ratio(flaot): this is the sixth gear ratio.
-    """
+    Attributes:
+        turbo(str): The name of the turbo
+        turbo_type(str): The type of the turbo
+        transmition(str): this shows the general type of the transmission not the exact make or model
+        gear1_ratio(float): this is the first gear ratio, or the trans ratio
+        gear2_ratio(float): this is the second gear ratio.
+        gear3_ratio(float): this is the third gear ratio.
+        gear4_ratio(float): this is the forth gear ratio.
+        gear5_ratio(float): this is the fifth gear ratio.
+        gear6_ratio(float): this is the sixth gear ratio.
+        dif_type(str): this shows if the differential is either opened or closed not the percentage locked or opened
+        dif_ratio(float): this is the ratio for the differential
+        engine_type(str): this is the engine type, in the first case it would be an inline 6
+        tire_diameter(int): this shows the diameter of the rear tyres
+        weight(int): the weight of the car with the modifications
+        driver_weight(int): this is the weight of the driver
+        gutted_weight(int): this is the weight that you will lose if you gut the A/C and the interior
+        """
+
 
     DragCoefficient = .320
     CurbWeight = 3434
