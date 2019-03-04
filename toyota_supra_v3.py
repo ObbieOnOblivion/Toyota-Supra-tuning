@@ -22,7 +22,6 @@ class ToyotaSupraInternals:
         engine_type(str): this is the engine type, in the first case it would be an inline 6
         wheel_diameter(int): this shows the diameter of the rear tyres
         weight(int): the weight of the car with the modifications
-        driver_weight(int): this is the weight of the driver
         gutted_weight(int): this is the weight that you will lose if you gut the A/C and the interior
         """
 
@@ -85,8 +84,6 @@ Scotty.set_gear_ratio(6, .58)
 
 # print(Scotty.gear1_ratio)
 # print(Scotty.gear2_ratio)
-
-""" i want to make a new class were i use ecu to add feul and increase timing"""
 
 
 class ToyotaSupra(ToyotaSupraInternals):
@@ -165,7 +162,7 @@ class ToyotaSupra(ToyotaSupraInternals):
         mainwindow.mainloop()
 
     @staticmethod
-    def use_screen():  # maybe add a new window for a login and that login class this class function
+    def use_screen(): 
         """this is the application itself """
 
         def click_19():
@@ -211,19 +208,19 @@ class ToyotaSupra(ToyotaSupraInternals):
             my_function_3.click_6()
 
         def click5():
-            my_function_3.click_5()  # having problems with the image
+            my_function_3.click_5()
 
         def click4():
             my_function_3.click_4()
 
-        def click3():  # add another window to change the max boost setting
+        def click3(): 
 
             my_function_3.click_3()
 
         def click2():
             my_function_3.click_2()
 
-        def click1():  # we could reuse other functions to keep our code DRY and use replacement fields
+        def click1(): 
             my_function_3.click_1()
 
         def click():
@@ -277,9 +274,8 @@ class ToyotaSupra(ToyotaSupraInternals):
         button16 = tk.Button(mainwindow, text="Engine", fg='green', command=click16)
         button17 = tk.Button(mainwindow, text='car image', fg='green', command=click5)
         button18 = tk.Button(mainwindow, text="kill", fg='blue', command=kill_switch)
-        button19 = tk.Button(mainwindow, text='simulator', fg='magenta', command=click18)  # maroon aqua plum
+        button19 = tk.Button(mainwindow, text='simulator', fg='magenta', command=click18)
         button20 = tk.Button(mainwindow, text='Dyno numbers', fg='crimson', command=click17)
-        # crimson teal lavender magenta
         button21 = tk.Button(mainwindow, text='Other Details', fg="lavender", command=click_19)
 
         button1.grid(column=0, row=1, sticky='news')
@@ -325,7 +321,6 @@ class ToyotaSupra(ToyotaSupraInternals):
 
     def __init__(self):
         super(ToyotaSupra, self).__init__()
-        # def super(ToyotaSupra, self).super()
         self.spring_pressure = 5
         self.boost_level = int(self.spring_pressure)
         self.duty_cycle = 103
@@ -336,8 +331,6 @@ class ToyotaSupra(ToyotaSupraInternals):
         self.tyre_type = "Drag Radials"
         self.fuel_type = "89 Octane"
         self.tsd1 = {}
-
-    # use these functions to help assisgt the changing a variables in the window
 
     def maxboost(self, set_maxboost):
         """this sets the max boost pressure"""
@@ -380,120 +373,55 @@ class ToyotaSupra(ToyotaSupraInternals):
 
         for i in range(4200, 4501, 100):
             dict1 = dict()
-            dict1["1"] = 1.32  # above 25
-            dict1["2"] = 1.17  # 22 - 25
-            dict1["3"] = 1.11  # 19 - 22
-            dict1["4"] = 1.05  # 17-19
-            dict1["5"] = 1.00  # 17
-            dict1["6"] = .98  # 15-17
-            dict1["7"] = 1.04  # 12-15
-            dict1["8"] = 1.14  # bellow 12
+            dict1["1"] = 1.32 
+            dict1["2"] = 1.17 
+            dict1["3"] = 1.11 
+            dict1["4"] = 1.05 
+            dict1["5"] = 1.00 
+            dict1["6"] = .98  
+            dict1["7"] = 1.04 
+            dict1["8"] = 1.14 
 
             self.tsd1[i] = dict1
 
         for i in range(4000, 4200, 100):
             dict2 = dict()
-            dict2["1"] = 1.27  # above 25
-            dict2["2"] = 1.15  # 22 - 25
-            dict2["3"] = 1.10  # 19 - 22
-            dict2["4"] = 1.04  # 17-19
-            dict2["5"] = 1.03  # 17
-            dict2["6"] = 1.01  # 15-17
-            dict2["7"] = 1.07  # 12-15
-            dict2["8"] = 1.24  # bellow 12
+            dict2["1"] = 1.27  
+            dict2["2"] = 1.15  
+            dict2["3"] = 1.10  
+            dict2["4"] = 1.04  
+            dict2["5"] = 1.03  
+            dict2["6"] = 1.01  
+            dict2["7"] = 1.07  
+            dict2["8"] = 1.24  
 
             self.tsd1[i] = dict2
 
         for i in range(3700, 4000, 100):
             dict3 = dict()
-            dict3["1"] = 1.17  # above 25
-            dict3["2"] = 1.09  # 22 - 25
-            dict3["3"] = 1.02  # 19 - 22
-            dict3["4"] = 1.009  # 17-19
-            dict3["5"] = 1.07  # 17
-            dict3["6"] = 1.11  # 15-17
-            dict3["7"] = 1.21  # 12-15
-            dict3["8"] = 1.34  # bellow 12
+            dict3["1"] = 1.17  
+            dict3["2"] = 1.09  
+            dict3["3"] = 1.02  
+            dict3["4"] = 1.009 
+            dict3["5"] = 1.07  
+            dict3["6"] = 1.11  
+            dict3["7"] = 1.21  
+            dict3["8"] = 1.34  
 
             self.tsd1[i] = dict3
 
         for i in range(3500, 3700, 100):
             dict4 = dict()
-            dict4["1"] = 1.21  # above 25
-            dict4["2"] = 1.17  # 22 - 25
-            dict4["3"] = 1.11  # 19 - 22
-            dict4["4"] = 1.09  # 17-19
-            dict4["5"] = 1.03  # 17
-            dict4["6"] = 1.11  # 15-17
-            dict4["7"] = 1.27  # 12-15
-            dict4["8"] = 1.44  # bellow 12
+            dict4["1"] = 1.21  
+            dict4["2"] = 1.17  
+            dict4["3"] = 1.11  
+            dict4["4"] = 1.09  
+            dict4["5"] = 1.03  
+            dict4["6"] = 1.11  
+            dict4["7"] = 1.27  
+            dict4["8"] = 1.44  
 
             self.tsd1[i] = dict4
-    #
-    # def tsd_set2(self, number=None):
-    #     # this is for the eigth mile
-    #
-    #     for i in range(4200, 4501, 100):
-    #         dict1 = dict()
-    #         dict1["1"] = 1.32  # above 25
-    #         dict1["2"] = 1.17  # 22 - 25
-    #         dict1["3"] = 1.11  # 19 - 22
-    #         dict1["4"] = 1.05  # 17-19
-    #         dict1["5"] = 1.00  # 17
-    #         dict1["6"] = .98  # 15-17
-    #         dict1["7"] = 1.04  # 12-15
-    #         dict1["8"] = 1.14  # bellow 12
-    #
-    #         self.tsd2[i] = dict1
-    #
-    #         # each other section for each two-step range
-    #         # the subsection is for tyre pressures
-    #
-    #     # print(self.tsd1.items())
-    #
-    #     for i in range(4000, 4200, 100):
-    #         dict2 = dict()
-    #         dict2["1"] = 1.27  # above 25
-    #         dict2["2"] = 1.15  # 22 - 25
-    #         dict2["3"] = 1.10  # 19 - 22
-    #         dict2["4"] = 1.04  # 17-19
-    #         dict2["5"] = 1.03  # 17
-    #         dict2["6"] = 1.01  # 15-17
-    #         dict2["7"] = 1.07  # 12-15
-    #         dict2["8"] = 1.24  # bellow 12
-    #
-    #         self.tsd2[i] = dict2
-    #
-    #     # print(self.tsd2.items())
-    #
-    #     for i in range(3700, 4000, 100):
-    #         dict3 = dict()
-    #         dict3["1"] = 1.17  # above 25
-    #         dict3["2"] = 1.09  # 22 - 25
-    #         dict3["3"] = 1.02  # 19 - 22
-    #         dict3["4"] = 1.009  # 17-19
-    #         dict3["5"] = 1.07  # 17
-    #         dict3["6"] = 1.11  # 15-17
-    #         dict3["7"] = 1.21  # 12-15
-    #         dict3["8"] = 1.34  # bellow 12
-    #
-    #         self.tsd2[i] = dict3
-    #
-    #     for i in range(3500, 3700, 100):
-    #         dict4 = dict()
-    #         dict4["1"] = 1.21  # above 25
-    #         dict4["2"] = 1.17  # 22 - 25
-    #         dict4["3"] = 1.11  # 19 - 22
-    #         dict4["4"] = 1.09  # 17-19
-    #         dict4["5"] = 1.03  # 17
-    #         dict4["6"] = 1.11  # 15-17
-    #         dict4["7"] = 1.27  # 12-15
-    #         dict4["8"] = 1.44  # bellow 12
-    #
-    #         self.tsd2[i] = dict4
-    #
-    #     # print(self.tsd2.items())
-
 
 OBBIE = ToyotaSupra()
 
