@@ -11,4 +11,4 @@ Click on the RunApp.py module. Then uncomment the dunder name == main code that 
 The code that runs the use_screen() method is the application. When you do run this application, it may or may not exit your 
 current IDE. Your Ide will not close. 
 # Dont understand cars 
-Well look no further than the help function, I have added the propper text documentation in the "pep 257 format"
+Well look no further than the help() function, I have added the propper text documentation in the "pep 257 format"
