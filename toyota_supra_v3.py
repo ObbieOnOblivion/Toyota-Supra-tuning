@@ -48,6 +48,7 @@ class ToyotaSupraInternals:
         self.gutted_weight = 400
 
     def set_gear_ratio(self, gear, ratio):
+        """this is the gear ratios for each gear 1-5."""
         if gear == 1:
             self.gear1_ratio = ratio
 
@@ -68,7 +69,6 @@ class ToyotaSupraInternals:
 
     def gut_car(self):
         """this method removes weight from the car"""
-
         if self.weight:
             self.weight -= self.gutted_weight
 
@@ -81,10 +81,6 @@ Scotty.set_gear_ratio(3, 1.49)
 Scotty.set_gear_ratio(4, 1.00)
 Scotty.set_gear_ratio(5, .69)
 Scotty.set_gear_ratio(6, .58)
-
-# print(Scotty.gear1_ratio)
-# print(Scotty.gear2_ratio)
-
 
 class ToyotaSupra(ToyotaSupraInternals):
     """This class will be more concerning with the cars tune not as much the hardware of the car
