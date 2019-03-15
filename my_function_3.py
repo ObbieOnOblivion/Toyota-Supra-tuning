@@ -37,7 +37,7 @@ class HP:
 
         horsepower = 300
 
-        number = ((v3.OBBIE.boost_level * (v3.OBBIE.boost_level * .7)) * .63) * (v3.OBBIE.dutycycle // 100)
+        number = ((v3.OBBIE.boost_level * (v3.OBBIE.boost_level * .7)) * .63) * (v3.OBBIE.duty_cycle // 100)
 
         if v3.OBBIE.fuel_type == '89 Octane':
             number = number * .95
@@ -77,28 +77,28 @@ class HP:
         v3.OBBIE.tsd_set1()
 
         if v3.OBBIE.tyre_pressure > 25:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['1']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['1']
 
         if 22 < v3.OBBIE.tyre_pressure <= 25:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['2']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['2']
 
         if 19 < v3.OBBIE.tyre_pressure <= 22:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['3']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['3']
 
         if 17 < v3.OBBIE.tyre_pressure <= 19:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['4']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['4']
 
         if v3.OBBIE.tyre_pressure == 17:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['5']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['5']
 
         if 15 <= v3.OBBIE.tyre_pressure < 17:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['6']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['6']
 
         if 12 <= v3.OBBIE.tyre_pressure < 15:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['7']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['7']
 
         if v3.OBBIE.tyre_pressure < 12:
-            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['8']
+            time101 = time101 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['8']
 
         time101 = str(time101)[0:6]
 
@@ -120,28 +120,28 @@ class HP:
         time1 = HP.get_q_time()
         time2 = float(time1) * 1.526135063
 
-        if v3.OBBIE.tyre_pressure > 28:
+        if v3.OBBIE.wheel_diameter > 28:
             time2 = time2 * 1.09
 
-        if 25 < v3.OBBIE.tyre_pressure <= 28:
+        if 25 < v3.OBBIE.wheel_diameter <= 28:
             time2 = time2 * 1.07
 
-        if 22 < v3.OBBIE.tyre_pressure <= 25:
+        if 22 < v3.OBBIE.wheel_diameter <= 25:
             time2 = time2 * 1.04
 
-        if 20 < v3.OBBIE.tyre_pressure <= 22:
+        if 20 < v3.OBBIE.wheel_diameter <= 22:
             time2 = time2 * .97
 
-        if v3.OBBIE.tyre_pressure == 20:
+        if v3.OBBIE.wheel_diameter == 20:
             time2 = time2 * 1.03
 
-        if 18 <= v3.OBBIE.tyre_pressure < 20:
+        if 18 <= v3.OBBIE.wheel_diameter < 20:
             time2 = time2 * 1.04
 
-        if 15 <= v3.OBBIE.tyre_pressure < 18:
+        if 15 <= v3.OBBIE.wheel_diameter < 18:
             time2 = time2 * 1.09
 
-        if v3.OBBIE.tyre_pressure < 15:
+        if v3.OBBIE.wheel_diameter < 15:
             time2 = time2 * 1.11
 
         return time2
@@ -154,29 +154,28 @@ class HP:
         v3.OBBIE.tsd_set1()
 
         if v3.OBBIE.tyre_pressure > 25:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['1']
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['1']
 
         if 22 < v3.OBBIE.tyre_pressure <= 25:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['2']
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['2']
 
         if 19 < v3.OBBIE.tyre_pressure <= 22:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['3']
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['3']
 
         if 17 < v3.OBBIE.tyre_pressure <= 19:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['4']
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['4']
 
         if v3.OBBIE.tyre_pressure == 17:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['5']
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['5']
 
         if 15 <= v3.OBBIE.tyre_pressure < 17:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['6']
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['6']
 
         if 12 <= v3.OBBIE.tyre_pressure < 15:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['7']
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['7']
 
         if v3.OBBIE.tyre_pressure < 12:
-            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.twosteprpm)['8']
-
+            number2 = number2 * v3.OBBIE.tsd1.get(v3.OBBIE.two_step_RPM)['8']
 
         return number2
 
@@ -195,57 +194,57 @@ class HP:
 
 def click():
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title('spring pressure')
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title('spring pressure')
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
-    text1.insert(0.0, f'{v3.OBBIE.spring_preasure} pounds of boost')
+    text1.insert(0.0, f'{v3.OBBIE.spring_pressure} pounds of boost')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_1():
     import tkinter as tk
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title('tyre type')
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title('tyre type')
 
-    text1 = tk.Text(Mane)
-    text1.delete(0.0, 6.6)  # maybe dont delete and add
+    text1 = tk.Text(main)
+    text1.delete(0.0, 6.6)  # maybe don't delete and add
     text1.insert(0.0, f'{v3.OBBIE.tyre_type}')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_2():
@@ -254,14 +253,14 @@ def click_2():
     import tkinter as tk
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
-    Mane = tk.Tk()
-    Mane.geometry('450x500-170-50')
-    Mane.title('tyre pressure')
-    Mane.configure(background='yellow', relief='groove', borderwidth=4)
+    main = tk.Tk()
+    main.geometry('450x500-170-50')
+    main.title('tyre pressure')
+    main.configure(background='yellow', relief='groove', borderwidth=4)
 
-    text1 = tk.Text(Mane, width=30)
+    text1 = tk.Text(main, width=30)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'your tyre pressures are {v3.OBBIE.tyre_pressure} psi')
     text1.insert(0.0, time.strftime("%Y-%b-%d (%A) \nTime: [%H:%M:%S]\n"))
@@ -270,18 +269,18 @@ def click_2():
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    bell1 = tk.Label(Mane, text='increments by\n 1 psi\n|\n|\n|\n|\n|\n|\n \/ ')
+    bell1 = tk.Label(main, text='increments by\n 1 psi\n|\n|\n|\n|\n|\n|\n \/ ')
     bell1.grid(column=1, row=0)
 
-    Mane.columnconfigure(0, weight=16)
-    Mane.columnconfigure(1, weight=16)
+    main.columnconfigure(0, weight=16)
+    main.columnconfigure(1, weight=16)
 
-    Mane.rowconfigure(0, weight=16)
-    Mane.rowconfigure(1, weight=16)
-    Mane.rowconfigure(2, weight=16)
+    main.rowconfigure(0, weight=16)
+    main.rowconfigure(1, weight=16)
+    main.rowconfigure(2, weight=16)
 
     def james():  # help needed here
         # ToyotaSupra.tyre_pressure = entry1
@@ -292,10 +291,10 @@ def click_2():
         else:
             v3.OBBIE.tyre_pressure = 10
 
-    but1 = tk.Button(Mane, text='apply new pressure', command=james)
+    but1 = tk.Button(main, text='apply new pressure', command=james)
     but1.grid(column=1, row=1)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_3():
@@ -303,46 +302,44 @@ def click_3():
     import time
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title('max boost')
+    main = tk.Tk()
+    main.geometry('550x300-170-50')
+    main.title('max boost')
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
-    text1.insert(0.0, f'your max boost is {v3.OBBIE.maxxboost} psi')
+    text1.insert(0.0, f'your max boost is {v3.OBBIE.max_boost} psi')
     text1.insert(0.0, time.strftime("%Y-%b-%d (%A) \nTime: [%H:%M:%S]\n"))
     text1.insert(0.0, "As of : ")
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    # c = tk.Checkbutton(mane, text='Make sure setting is safe ')
-
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=99)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_4():
     import tkinter as tk
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
-    Mane = tk.Tk()
-    Mane.geometry('450x500-170-50')
-    Mane.title('boost pressure')
-    Mane.configure(background='yellow', relief='groove', borderwidth=4)
+    main = tk.Tk()
+    main.geometry('450x500-170-50')
+    main.title('boost pressure')
+    main.configure(background='yellow', relief='groove', borderwidth=4)
 
-    text1 = tk.Text(Mane, width=35)
+    text1 = tk.Text(main, width=35)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'your boost pressures are {v3.OBBIE.boost_level} psi')
     text1.insert(0.0, time.strftime("%Y-%b-%d (%A) \nTime: [%H:%M:%S]\n"))
@@ -351,76 +348,72 @@ def click_4():
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    bell1 = tk.Label(Mane, text='increments by\n 1 psi\n|\n|\n|\n|\n|\n|\n \/ ')
+    bell1 = tk.Label(main, text='increments by\n 1 psi\n|\n|\n|\n|\n|\n|\n \/ ')
     bell1.grid(column=1, row=0)
 
-    Mane.columnconfigure(0, weight=16)
-    Mane.columnconfigure(1, weight=16)
+    main.columnconfigure(0, weight=16)
+    main.columnconfigure(1, weight=16)
 
-    Mane.rowconfigure(0, weight=16)
-    Mane.rowconfigure(1, weight=16)
-    Mane.rowconfigure(2, weight=16)
+    main.rowconfigure(0, weight=16)
+    main.rowconfigure(1, weight=16)
+    main.rowconfigure(2, weight=16)
 
     def james():  # help needed here
         v3.OBBIE.inc_boost(1)
 
-    but1 = tk.Button(Mane, text='apply new pressure', command=james)
+    but1 = tk.Button(main, text='apply new pressure', command=james)
     but1.grid(column=1, row=1)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_5():
-    # import tkinter as tk
+    import tkinter as tk
+
+    main = tk.Tk()
+    main.geometry('450x500-170-50')
+    main.title(' car image ')
+    main.configure(background='yellow', relief='groove', borderwidth=4)
+
+    # c = tk.PhotoImage(file='/Users/abdurahmanomoruyi/Downloads/1444829005_tumblr_lzf57inObn1qkhqozo1_500.gif')
     #
-    # def close_click():
-    #     Mane.destroy()
-    #
-    # Mane = tk.Tk()
-    # Mane.geometry('450x500-170-50')
-    # Mane.title(' car image ')
-    # Mane.configure(background='yellow', relief='groove', borderwidth=4)
-    #
-    # # c = tk.PhotoImage(file='/Users/abdurahmanomoruyi/Downloads/1444829005_tumblr_lzf57inObn1qkhqozo1_500.gif')
-    # #
-    # # bell1 = tk.Label(Mane, image=c)
-    # # bell1.grid(column=0, row=0)
-    #
-    # Mane.columnconfigure(0, weight=16)
-    #
-    # Mane.rowconfigure(0, weight=16)
-    return "sweet honey barbecue "
+    bell1 = tk.Label(main, text="ERROR\nCAN'T FIND IMAGE")
+    bell1.grid(column=0, row=0)
+
+    main.columnconfigure(0, weight=16)
+
+    main.rowconfigure(0, weight=16)
 
 
 def click_6():
     import tkinter as tk
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title('duty cycle')
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title('duty cycle')
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)  # maybe dont delete and add
-    text1.insert(0.0, f'{v3.OBBIE.dutycycle}%')
+    text1.insert(0.0, f'{v3.OBBIE.duty_cycle}%')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_7():
@@ -428,34 +421,34 @@ def click_7():
     import tkinter as tk
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
-    Mane = tk.Tk()
-    Mane.geometry('450x500-170-50')
-    Mane.title('two-step RPM')
-    Mane.configure(background='yellow', relief='groove', borderwidth=4)
+    main = tk.Tk()
+    main.geometry('450x500-170-50')
+    main.title('two-step RPM')
+    main.configure(background='yellow', relief='groove', borderwidth=4)
 
-    text1 = tk.Text(Mane, width=35)
+    text1 = tk.Text(main, width=35)
     text1.delete(0.0, 6.6)
-    text1.insert(0.0, f'two-step rpm set at {v3.OBBIE.twosteprpm} rpm\'s')
+    text1.insert(0.0, f'two-step rpm set at {v3.OBBIE.two_step_RPM} rpm\'s')
     text1.insert(0.0, time.strftime("%Y-%b-%d (%A) \nTime: [%H:%M:%S]\n"))
     text1.insert(0.0, "As of : ")
     text1.configure(background='yellow', fg='green', relief='sunken', borderwidth=6)
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    bell1 = tk.Label(Mane, text='increments by\n 100\n|\n|\n|\n|\n|\n|\n \/ ')
+    bell1 = tk.Label(main, text='increments by\n 100\n|\n|\n|\n|\n|\n|\n \/ ')
     bell1.grid(column=1, row=0)
 
-    Mane.columnconfigure(0, weight=16)
-    Mane.columnconfigure(1, weight=16)
+    main.columnconfigure(0, weight=16)
+    main.columnconfigure(1, weight=16)
 
-    Mane.rowconfigure(0, weight=16)
-    Mane.rowconfigure(1, weight=16)
-    Mane.rowconfigure(2, weight=16)
+    main.rowconfigure(0, weight=16)
+    main.rowconfigure(1, weight=16)
+    main.rowconfigure(2, weight=16)
 
     def james():  # help needed here
         # ToyotaSupra.tyre_pressure = entry1
@@ -466,15 +459,15 @@ def click_7():
         else:
             v3.OBBIE.twosteprpm = 3500
 
-    but1 = tk.Button(Mane, text='apply new two-step RPM', command=james)
+    but1 = tk.Button(main, text='apply new two-step RPM', command=james)
     but1.grid(column=1, row=1)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_8():  # more advanced fuel set up
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
 
@@ -493,42 +486,44 @@ def click_8():  # more advanced fuel set up
     def octane89():
         v3.OBBIE.change_fuel_type('89 Octane')
 
-    Mane = tk.Tk()
-    Mane.geometry('350x200-170-50')
-    Mane.title('Fuel Information')
+    main = tk.Tk()
+    main.geometry('350x200-170-50')
+    main.title('Fuel Information')
 
-    Label1 = tk.Label(Mane, text='your fuel pressures:', fg='teal')  # i spelled fuel wrong
-    Label1.grid(column=0, row=0, sticky='sew')
+    label1 = tk.Label(main, text='your fuel pressures:', fg='teal')  # i spelled fuel wrong
+    label1.grid(column=0, row=0, sticky='sew')
 
-    Label2 = tk.Label(Mane, text=f'{v3.OBBIE.fuel_pressure} PSI', fg='teal')
-    Label2.grid(column=0, row=1, sticky='new')
+    label2 = tk.Label(main, text=f'{v3.OBBIE.fuel_pressure} PSI', fg='teal')
+    label2.grid(column=0, row=1, sticky='new')
 
-    Label3 = tk.Label(Mane, text='fuel types')
-    Label3.grid(column=1, row=0)
+    label3 = tk.Label(main, text='fuel types')
+    label3.grid(column=1, row=0, sticky='new')
 
-    Frame = tk.Frame(Mane)
-    Frame.grid(column=1, row=0, rowspan=2)
+    frame = tk.Frame(main)
+    frame.grid(column=1, row=0, rowspan=2)
 
-    button1 = tk.Button(Frame, text='93 Octane', fg='crimson', command=octane93)
-    button2 = tk.Button(Frame, text='118 Octane', fg='crimson',command=octane118)
-    button3 = tk.Button(Frame, text='c16', fg='crimson',command=c16)
-    button4 = tk.Button(Frame, text='ignite red', fg='crimson', command=ignite_red)
-    button5 = tk.Button(Frame, text='89 Octane', fg='crimson',command=octane89)
+    button1 = tk.Button(frame, text='93 Octane', fg='crimson', command=octane93)
+    button2 = tk.Button(frame, text='118 Octane', fg='crimson', command=octane118)
+    button3 = tk.Button(frame, text='c16', fg='crimson', command=c16)
+    button4 = tk.Button(frame, text='ignite red', fg='crimson', command=ignite_red)
+    button5 = tk.Button(frame, text='89 Octane', fg='crimson', command=octane89)
+    button6 = tk.Button(main, text='Kill', fg='aqua', command=close_click)
 
     button1.grid(column=0, row=1)
     button2.grid(column=0, row=2)
     button3.grid(column=0, row=3)
     button4.grid(column=0, row=4)
     button5.grid(column=0, row=5)
+    button6.grid(column=0, row=2)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
-    Mane.rowconfigure(1, weight=6)
+    main.rowconfigure(0, weight=6)
+    main.rowconfigure(1, weight=6)
+    main.rowconfigure(2, weight=6)
 
-
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_9():
@@ -536,29 +531,29 @@ def click_9():
     #     MANE = str(MANE)
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title("gear 1 ratio")
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title("gear 1 ratio")
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'gear 1 ratio is [{v3.Scotty.gear1_ratio}]')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_10():
@@ -566,154 +561,143 @@ def click_10():
     #     MANE = str(MANE)
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title("gear 2 ratio")
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title("gear 2 ratio")
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'gear 2 ratio is [{v3.Scotty.gear2_ratio}]')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_11():
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title("gear 3 ratio")
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title("gear 3 ratio")
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'gear 3 ratio is [{v3.Scotty.gear3_ratio}]')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_12():
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title("gear 4 ratio")
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title("gear 4 ratio")
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'gear 4 ratio is [{v3.Scotty.gear4_ratio}]')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_13():
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
 
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title("gear 5 ratio")
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title("gear 5 ratio")
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'gear 5 ratio is [{v3.Scotty.gear5_ratio}]')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_14():
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
-
     def close_click():
-        Mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    Mane = tk.Tk()
-    Mane.geometry('250x100-170-50')
-    Mane.title("gear 6 ratio")
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title("gear 6 ratio")
 
-    text1 = tk.Text(Mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'gear 6 ratio is [{v3.Scotty.gear6_ratio}]')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(Mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    Mane.columnconfigure(0, weight=6)
-    Mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    Mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    Mane.mainloop()
+    main.mainloop()
 
 
 def click_15():
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
 
     def close_click():
         main.destroy()
@@ -747,116 +731,117 @@ def click_16():
     #     MANE = str(MANE)
 
     def close_click():
-        mane.destroy()
+        main.destroy()
 
     import tkinter as tk
-    mane = tk.Tk()
-    mane.geometry('250x100-170-50')
-    mane.title("engine")
+    main = tk.Tk()
+    main.geometry('250x100-170-50')
+    main.title("engine")
 
-    text1 = tk.Text(mane)
+    text1 = tk.Text(main)
     text1.delete(0.0, 6.6)
     text1.insert(0.0, f'engine type: \n[{v3.Scotty.engine_type}]')
     text1.configure(background='yellow', fg='green')
 
     text1.grid(column=0, row=0)
 
-    button101 = tk.Button(mane, text='terminate', command=close_click)
+    button101 = tk.Button(main, text='terminate', command=close_click)
     button101.grid(column=0, row=1)
 
-    mane.columnconfigure(0, weight=6)
-    mane.columnconfigure(1, weight=6)
+    main.columnconfigure(0, weight=6)
+    main.columnconfigure(1, weight=6)
 
-    mane.rowconfigure(0, weight=6)
+    main.rowconfigure(0, weight=6)
 
-    mane.mainloop()
+    main.mainloop()
 
 
 def click_17():
     import tkinter
 
-    Main = tkinter.Tk()
-    Main.geometry('300x200-20-100')
-    Main.title('Dyno Sheet')
+    main = tkinter.Tk()
+    main.geometry('300x200-20-100')
+    main.title('Dyno Sheet')
 
-    lab1 = tkinter.Label(Main, text='horse power numbers')
+    lab1 = tkinter.Label(main, text='horse power numbers')
     lab1.grid(column=0, row=0)
 
-    lab2 = tkinter.Label(Main, text='torque numbers')
+    lab2 = tkinter.Label(main, text='torque numbers')
     lab2.grid(column=1, row=0)
 
-    # text1 = tkinter.Text(Main, width=20)
-    # text1.grid(column=0, row=1, sticky='news')
-    #
-    # text1.insert(0.0, f'{HP.get_number()}')
-    #
-    # text2 = tkinter.Text(Main, width=20)
-    # text2.grid(column=1, row=1)
-    #
-    # text2.insert(0.0, f'{int(HP.get_number()) - 200}')
-
-    lab3 = tkinter.Label(Main, text=f'{HP.get_number2()}')
+    lab3 = tkinter.Label(main, text=f'{HP.get_number2()}')
     lab3.grid(column=0, row=1)
 
-    lab4 = tkinter.Label(Main, text=HP.get_torque_numbers())
+    lab4 = tkinter.Label(main, text=HP.get_torque_numbers())
     lab4.grid(column=1, row=1)
 
-    Main.rowconfigure(0)
-    Main.rowconfigure(1)
+    main.rowconfigure(0)
+    main.rowconfigure(1)
 
-    Main.columnconfigure(0)
-    Main.columnconfigure(1)
+    main.columnconfigure(0)
+    main.columnconfigure(1)
 
-    Main.mainloop()
+    main.mainloop()
 
 
 def click_18():
     import tkinter
-    Main = tkinter.Tk()
-    Main.geometry("650x150-10-100")
-    Main.title('Times')
+    main = tkinter.Tk()
+    main.geometry("650x150-10-100")
+    main.title('Times')
 
-    label5 = tkinter.Label(Main, text='eighth mile time')
+    label5 = tkinter.Label(main, text='eighth mile time')
     label5.grid(column=0, row=0, sticky='ews')
 
-    label6 = tkinter.Label(Main, text=HP.get_eighth_time())
+    label6 = tkinter.Label(main, text=HP.get_eighth_time())
     label6.grid(column=0, row=1, sticky='new')
 
-    label1 = tkinter.Label(Main, text='Quarter Mile Time')
+    label1 = tkinter.Label(main, text='Quarter Mile Time')
     label1.grid(column=1, row=0, sticky='ews')
 
-    label2 = tkinter.Label(Main, text=HP.get_q_time())
+    label2 = tkinter.Label(main, text=HP.get_q_time())
     label2.grid(column=1, row=1, sticky='new')
 
-    label3 = tkinter.Label(Main, text='Half Mile Time')
+    label3 = tkinter.Label(main, text='Half Mile Time')
     label3.grid(column=2, row=0, sticky='ews')
 
-    label4 = tkinter.Label(Main, text=HP.get_half_time())
+    label4 = tkinter.Label(main, text=HP.get_half_time())
     label4.grid(column=2, row=1, sticky='new')
 
-    Main.columnconfigure(0, weight=5)
-    Main.columnconfigure(1, weight=5)
-    Main.columnconfigure(2, weight=5)
+    main.columnconfigure(0, weight=5)
+    main.columnconfigure(1, weight=5)
+    main.columnconfigure(2, weight=5)
 
-    Main.rowconfigure(0, weight=5)
-    Main.rowconfigure(1, weight=5)
+    main.rowconfigure(0, weight=5)
+    main.rowconfigure(1, weight=5)
 
 
 def click_19():
     import tkinter
-    Main = tkinter.Tk()
-    Main.geometry('800x300-26-100')
-    Main.title('Extra info')
+    main = tkinter.Tk()
+    main.geometry('800x300-26-100')
+    main.title('Extra info')
 
-    label1 = tkinter.Label(Main, text='cars weight')
-    label2 = tkinter.Label(Main, text='tyre diameter')
-    label3 = tkinter.Label(Main, text='gutted weight')
-    label4 = tkinter.Label(Main, text='turbo information')
-    label5 = tkinter.Label(Main, text=f'{v3.Scotty.weight}')
-    label6 = tkinter.Label(Main, text=f'{v3.Scotty.tire_diameter}')
-    label7 = tkinter.Label(Main, text=f'{v3.Scotty.gutted_weight}')
-    label8 = tkinter.Label(Main, text=f'{v3.Scotty.turbo}')
-    label9 = tkinter.Label(Main, text=f'Type:\n{v3.Scotty.turbo_type}')
+    def return_if_timing():
+        """this function looks to see if the car has advanced timing or retarded timing """
+        if 11 < v3.OBBIE.timing_degrees < 16:
+            return "Advanced timing"
+        if v3.OBBIE.timing_degrees <= 10:
+            return "retarded timing"
+        else:
+            return "None"
+
+    label1 = tkinter.Label(main, text='cars weight')
+    label2 = tkinter.Label(main, text='tyre diameter')
+    label3 = tkinter.Label(main, text='gutted weight')
+    label4 = tkinter.Label(main, text='turbo information')
+    label5 = tkinter.Label(main, text=f'{v3.Scotty.weight}')
+    label6 = tkinter.Label(main, text=f'{v3.Scotty.wheel_diameter}')
+    label7 = tkinter.Label(main, text=f'{v3.Scotty.gutted_weight}')
+    label8 = tkinter.Label(main, text=f'{v3.Scotty.turbo}')
+    label9 = tkinter.Label(main, text=f'Type:\n{v3.Scotty.turbo_type}')
+    label10 = tkinter.Label(main, text='timing degrees')
+    label11 = tkinter.Label(main, text=f'{return_if_timing()}')
 
     label1.grid(column=0, row=0)
     label2.grid(column=1, row=0)
@@ -867,19 +852,46 @@ def click_19():
     label7.grid(column=2, row=1)
     label8.grid(column=3, row=1)
     label9.grid(column=3, row=2)
+    label10.grid(column=4, row=0)
+    label11.grid(column=4, row=1)
 
-    Main.rowconfigure(0, weight=10)
-    Main.rowconfigure(1, weight=10)
-    Main.rowconfigure(2, weight=10)
+    main.rowconfigure(0, weight=10)
+    main.rowconfigure(1, weight=10)
+    main.rowconfigure(2, weight=10)
 
-    Main.columnconfigure(0, weight=10)
-    Main.columnconfigure(1, weight=10)
-    Main.columnconfigure(2, weight=10)
-    Main.columnconfigure(3, weight=10)
+    main.columnconfigure(0, weight=10)
+    main.columnconfigure(1, weight=10)
+    main.columnconfigure(2, weight=10)
+    main.columnconfigure(3, weight=10)
+    main.columnconfigure(4, weight=10)
 
-    Main.mainloop()
-
-
-
+    main.mainloop()
 
 
+def click_20():
+    import tkinter
+    main = tkinter.Tk()
+    main.title("gutting car ")
+    main.geometry("200x200-100-100")
+
+    button1 = tkinter.Button(main, text="gut car")
+    button2 = tkinter.Button(main, text='original car weight')
+
+    button1.grid(column=0, row=0, sticky='news')
+    button2.grid(column=0, row=1, sticky='news')
+
+    label1 = tkinter.Label(main, text="cars weight")
+    label1.grid(column=0, row=2, sticky='news')
+
+    label2 = tkinter.Label(main, text=f'{v3.Scotty.weight}')
+    label2.grid(column=0, row=3, sticky='news')
+
+    button1.configure(command=v3.Scotty.gut_car)
+    button2.configure(command=v3.Scotty.apply_interior)
+
+    main.rowconfigure(0, weight=10)
+    main.rowconfigure(1, weight=10)
+    main.rowconfigure(2, weight=10)
+    main.rowconfigure(3, weight=10)
+
+    main.mainloop()
