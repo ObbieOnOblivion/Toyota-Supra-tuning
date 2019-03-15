@@ -12,3 +12,6 @@ The code that runs the use_screen() method is the application. When you do run t
 current IDE. Your Ide will not close. 
 # Dont understand cars 
 Well look no further than the help() function, I have added the propper text documentation in the "pep 257 format"
+
+# Note to your self
+i want there to be another corrilation betwenn the horse power and the 1/8 mile and the quarter mile 
