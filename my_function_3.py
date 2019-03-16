@@ -4,9 +4,17 @@ import time
 
 
 class HP:
+    """this is a class for the important numbers generated from the car or the tune
+
+    Attributes:
+
+        this class contains no attributes
+        """
 
     @staticmethod
-    def get_number():
+    def get_number():  # in this section i would love to
+        """this function looks at the pattern for how PercisionTurbo names there turbo chargers
+           and figures out how much bas horse power does it make """
 
         hpp = 0
         if 'pt8' in v3.Scotty.turbo.lower():
@@ -34,6 +42,7 @@ class HP:
 
     @staticmethod
     def get_number2():
+        """this gives your horsepower number based on what type of fuel you are using """
 
         horsepower = 300
 
@@ -65,6 +74,7 @@ class HP:
 
     @staticmethod
     def get_q_time():
+        """this generates the quarter mile time based on how much horsepower was presented """
 
         time101 = 1517.00
         for i in range(0, int(HP.get_number2())):
@@ -116,6 +126,8 @@ class HP:
 
     @staticmethod
     def get_half_time():
+        """this generates the half mile time based on the quarter mile time, does not present
+           MPH """
 
         time1 = HP.get_q_time()
         time2 = float(time1) * 1.526135063
@@ -148,6 +160,8 @@ class HP:
 
     @staticmethod
     def get_eighth_time():
+        """this generates the eight mile time based on the
+           quarter mile time """
         number1 = float(HP.get_q_time())
         number2 = (number1 * 0.623816674) + .188614263
 
@@ -181,6 +195,8 @@ class HP:
 
     @staticmethod
     def get_torque_numbers():
+        """this generates torque number based on the
+           horsepower"""
 
         k = HP.get_number2() * .89
 
@@ -193,6 +209,7 @@ class HP:
 
 
 def click():
+    """this displays spring pressure """
     def close_click():
         main.destroy()
 
@@ -220,6 +237,7 @@ def click():
 
 
 def click_1():
+    """this displays the tyre types """
     import tkinter as tk
 
     def close_click():
@@ -248,8 +266,8 @@ def click_1():
 
 
 def click_2():
-    # make sure to enter a count so they know how much psi they have in their tires
-    # maybe a text field to tell the count
+    """this displays the tyre pressure and could be inconstant at your will """
+
     import tkinter as tk
 
     def close_click():
@@ -298,6 +316,8 @@ def click_2():
 
 
 def click_3():
+    """this displays the max boost and could be inconstant at your will """
+
     import tkinter as tk
     import time
 
@@ -329,6 +349,8 @@ def click_3():
 
 
 def click_4():
+    """this displays the boost pressure and could be inconstant at your will """
+
     import tkinter as tk
 
     def close_click():
@@ -371,6 +393,7 @@ def click_4():
 
 
 def click_5():
+    """car image"""
     import tkinter as tk
 
     main = tk.Tk()
@@ -389,6 +412,7 @@ def click_5():
 
 
 def click_6():
+    """this function displayed the duty cycle"""
     import tkinter as tk
 
     def close_click():
@@ -417,6 +441,8 @@ def click_6():
 
 
 def click_7():
+    """this displays the two-step RPM and could be inconstant at your will """
+
     import time
     import tkinter as tk
 
@@ -466,6 +492,8 @@ def click_7():
 
 
 def click_8():  # more advanced fuel set up
+    """this function displays the avalible fuel types
+       and changes the horsepower and torque figures """
     def close_click():
         main.destroy()
 
@@ -527,6 +555,7 @@ def click_8():  # more advanced fuel set up
 
 
 def click_9():
+    """gear one ratio"""
     # if type(MANE) == int():
     #     MANE = str(MANE)
 
@@ -557,6 +586,7 @@ def click_9():
 
 
 def click_10():
+    """gear two ratio"""
     # if type(MANE) == int():
     #     MANE = str(MANE)
 
@@ -587,6 +617,7 @@ def click_10():
 
 
 def click_11():
+    """gear three ratio """
 
     def close_click():
         main.destroy()
@@ -615,6 +646,7 @@ def click_11():
 
 
 def click_12():
+    """gear 4 ratio"""
 
     def close_click():
         main.destroy()
@@ -643,6 +675,7 @@ def click_12():
 
 
 def click_13():
+    """gear 5 ratio"""
 
     def close_click():
         main.destroy()
@@ -671,6 +704,7 @@ def click_13():
 
 
 def click_14():
+    """gear 6 ratio"""
     def close_click():
         main.destroy()
 
@@ -698,6 +732,7 @@ def click_14():
 
 
 def click_15():
+    """this function displays information about the differential"""
 
     def close_click():
         main.destroy()
@@ -727,9 +762,7 @@ def click_15():
 
 
 def click_16():
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
-
+    """this function displays the engine name """
     def close_click():
         main.destroy()
 
@@ -757,6 +790,7 @@ def click_16():
 
 
 def click_17():
+    """this function displays the dyno sheet"""
     import tkinter
 
     main = tkinter.Tk()
@@ -785,6 +819,7 @@ def click_17():
 
 
 def click_18():
+    """this function presents the time slips """
     import tkinter
     main = tkinter.Tk()
     main.geometry("650x150-10-100")
@@ -817,6 +852,7 @@ def click_18():
 
 
 def click_19():
+    """extra info about the car """
     import tkinter
     main = tkinter.Tk()
     main.geometry('800x300-26-100')
@@ -869,6 +905,8 @@ def click_19():
 
 
 def click_20():
+    """this displays the weight of the car and could be inconstant at your will """
+
     import tkinter
     main = tkinter.Tk()
     main.title("gutting car ")
@@ -895,3 +933,7 @@ def click_20():
     main.rowconfigure(3, weight=10)
 
     main.mainloop()
+
+
+if __name__ == '__main__':
+    help(HP.get_number)
