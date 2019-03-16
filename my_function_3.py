@@ -1,5 +1,4 @@
 import toyota_supra_v3 as v3
-
 import time
 
 
@@ -12,7 +11,7 @@ class HP:
         """
 
     @staticmethod
-    def get_number():  # in this section i would love to
+    def get_number():
         """this function looks at the pattern for how PercisionTurbo names there turbo chargers
            and figures out how much bas horse power does it make """
 
@@ -62,12 +61,7 @@ class HP:
 
         if v3.OBBIE.fuel_type == 'c16':
             number = number * 1.05
-
-        # ended up at the same spot but the line was two steep
-        # 1 pound of boost added like 100 hp which is not realistic
-
-        # number = (toyota_supra_v2.OBBIE.boost_level * toyota_supra_v2.OBBIE.boost_level) * .43
-
+            
         horsepower = horsepower + number
 
         return horsepower
@@ -113,16 +107,6 @@ class HP:
         time101 = str(time101)[0:6]
 
         return str(time101)
-
-        # tyme = 1000.00
-        # for i in range(0, HP.get_number()):
-        #     tyme -= .09
-        #
-        # tyme = tyme / 100
-        #
-        # tyme = str(tyme)[0:5]
-        #
-        # return tyme
 
     @staticmethod
     def get_half_time():
@@ -248,7 +232,7 @@ def click_1():
     main.title('tyre type')
 
     text1 = tk.Text(main)
-    text1.delete(0.0, 6.6)  # maybe don't delete and add
+    text1.delete(0.0, 6.6)
     text1.insert(0.0, f'{v3.OBBIE.tyre_type}')
     text1.configure(background='yellow', fg='green')
 
@@ -300,9 +284,7 @@ def click_2():
     main.rowconfigure(1, weight=16)
     main.rowconfigure(2, weight=16)
 
-    def james():  # help needed here
-        # ToyotaSupra.tyre_pressure = entry1
-        # print(ToyotaSupra.tyre_pressure)
+    def james():
         if 10 <= v3.OBBIE.tyre_pressure <= 35:
             v3.OBBIE.tyre_pressure += 1
 
@@ -383,7 +365,7 @@ def click_4():
     main.rowconfigure(1, weight=16)
     main.rowconfigure(2, weight=16)
 
-    def james():  # help needed here
+    def james():
         v3.OBBIE.inc_boost(1)
 
     but1 = tk.Button(main, text='apply new pressure', command=james)
@@ -400,9 +382,7 @@ def click_5():
     main.geometry('450x500-170-50')
     main.title(' car image ')
     main.configure(background='yellow', relief='groove', borderwidth=4)
-
-    # c = tk.PhotoImage(file='/Users/abdurahmanomoruyi/Downloads/1444829005_tumblr_lzf57inObn1qkhqozo1_500.gif')
-    #
+    
     bell1 = tk.Label(main, text="ERROR\nCAN'T FIND IMAGE")
     bell1.grid(column=0, row=0)
 
@@ -423,7 +403,7 @@ def click_6():
     main.title('duty cycle')
 
     text1 = tk.Text(main)
-    text1.delete(0.0, 6.6)  # maybe dont delete and add
+    text1.delete(0.0, 6.6)
     text1.insert(0.0, f'{v3.OBBIE.duty_cycle}%')
     text1.configure(background='yellow', fg='green')
 
@@ -476,9 +456,7 @@ def click_7():
     main.rowconfigure(1, weight=16)
     main.rowconfigure(2, weight=16)
 
-    def james():  # help needed here
-        # ToyotaSupra.tyre_pressure = entry1
-        # print(ToyotaSupra.tyre_pressure)
+    def james():
         if 3500 <= v3.OBBIE.twosteprpm <= 4500:
             v3.OBBIE.twosteprpm += 100
 
@@ -491,7 +469,7 @@ def click_7():
     main.mainloop()
 
 
-def click_8():  # more advanced fuel set up
+def click_8(): 
     """this function displays the avalible fuel types
        and changes the horsepower and torque figures """
     def close_click():
@@ -556,9 +534,6 @@ def click_8():  # more advanced fuel set up
 
 def click_9():
     """gear one ratio"""
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
-
     def close_click():
         main.destroy()
 
@@ -587,8 +562,6 @@ def click_9():
 
 def click_10():
     """gear two ratio"""
-    # if type(MANE) == int():
-    #     MANE = str(MANE)
 
     def close_click():
         main.destroy()
