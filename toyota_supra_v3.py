@@ -25,6 +25,8 @@ class ToyotaSupraInternals:
         gutted_weight(int): this is the weight that you will lose if you gut the A/C and the interior
         """
 
+    """these are other variable just to keep in mind
+    these are not important to the program """
     DragCoefficient = .320
     CurbWeight = 3434
     """ drag Coefficient at 90 miles per hour"""
@@ -48,7 +50,6 @@ class ToyotaSupraInternals:
         self.gutted_weight = 400
 
     def set_gear_ratio(self, gear, ratio):
-        """this is the gear ratios for each gear 1-5."""
         if gear == 1:
             self.gear1_ratio = ratio
 
@@ -69,8 +70,17 @@ class ToyotaSupraInternals:
 
     def gut_car(self):
         """this method removes weight from the car"""
-        if self.weight:
+
+        if self.weight == 3599:
             self.weight -= self.gutted_weight
+            return True
+        else:
+            return False
+
+    def apply_interior(self):
+        """this method puts back the weight that was gutted back on"""
+        if bool(self.gut_car) and self.weight == 3199:
+            self.weight += self.gutted_weight
 
 
 Scotty = ToyotaSupraInternals()
@@ -81,6 +91,7 @@ Scotty.set_gear_ratio(3, 1.49)
 Scotty.set_gear_ratio(4, 1.00)
 Scotty.set_gear_ratio(5, .69)
 Scotty.set_gear_ratio(6, .58)
+
 
 class ToyotaSupra(ToyotaSupraInternals):
     """This class will be more concerning with the cars tune not as much the hardware of the car
@@ -125,13 +136,6 @@ class ToyotaSupra(ToyotaSupraInternals):
         label5 = tk.Label(mainwindow, text='boost by gear')
         label6 = tk.Label(mainwindow, text='car details')
 
-        # label1.config(relief= 'sunken')
-        # label2.config(relief= 'raised')
-        # label3.config(relief= 'sunken')
-        # label4.config(relief= 'raised')
-        # label5.config(relief= 'sunken')
-        # label6.config(relief= 'raised')
-        #
         label1.config(relief='groove')
         label2.config(relief='groove')
         label3.config(relief='groove')
@@ -158,69 +162,70 @@ class ToyotaSupra(ToyotaSupraInternals):
         mainwindow.mainloop()
 
     @staticmethod
-    def use_screen(): 
+    def use_screen():
         """this is the application itself """
+        def click_20():
+            my_function_3.click_20()  # visit my_function_3.py for documentation
 
         def click_19():
-            my_function_3.click_19()
+            my_function_3.click_19()  # visit my_function_3.py for documentation
 
         def click18():
-            my_function_3.click_18()
+            my_function_3.click_18()  # visit my_function_3.py for documentation
 
         def click17():
-            my_function_3.click_17()
+            my_function_3.click_17()  # visit my_function_3.py for documentation
 
         def click16():
-            my_function_3.click_16()
+            my_function_3.click_16()  # visit my_function_3.py for documentation
 
         def click15():
-            my_function_3.click_15()
+            my_function_3.click_15()  # visit my_function_3.py for documentation
 
         def click14():
-            my_function_3.click_14()
+            my_function_3.click_14()  # visit my_function_3.py for documentation
 
         def click13():
-            my_function_3.click_13()
+            my_function_3.click_13()  # visit my_function_3.py for documentation
 
         def click12():
-            my_function_3.click_12()
+            my_function_3.click_12()  # visit my_function_3.py for documentation
 
         def click11():
-            my_function_3.click_11()
+            my_function_3.click_11()  # visit my_function_3.py for documentation
 
         def click10():
-            my_function_3.click_10()
+            my_function_3.click_10()  # visit my_function_3.py for documentation
 
         def click9():
-            my_function_3.click_9()
+            my_function_3.click_9()  # visit my_function_3.py for documentation
 
         def click8():
-            my_function_3.click_8()
+            my_function_3.click_8()  # visit my_function_3.py for documentation
 
         def click7():
-            my_function_3.click_7()
+            my_function_3.click_7()  # visit my_function_3.py for documentation
 
         def click6():
-            my_function_3.click_6()
+            my_function_3.click_6()  # visit my_function_3.py for documentation
 
         def click5():
-            my_function_3.click_5()
+            my_function_3.click_5()  # visit my_function_3.py for documentation
 
         def click4():
-            my_function_3.click_4()
+            my_function_3.click_4()  # visit my_function_3.py for documentation
 
-        def click3(): 
-
-            my_function_3.click_3()
+        def click3():
+            my_function_3.click_3()  # visit my_function_3.py for documentation
 
         def click2():
-            my_function_3.click_2()
+            my_function_3.click_2()  # visit my_function_3.py for documentation
 
-        def click1(): 
-            my_function_3.click_1()
+        def click1():
+            my_function_3.click_1()  # visit my_function_3.py for documentation
 
         def click():
-            my_function_3.click()
+            my_function_3.click()  # visit my_function_3.py for documentation
 
         def kill_switch():
             mainwindow.destroy() 
@@ -233,7 +238,7 @@ class ToyotaSupra(ToyotaSupraInternals):
 
         label1 = tk.Label(mainwindow, text='tyres')
         label2 = tk.Label(mainwindow, text='boost pressure')
-        label3 = tk.Label(mainwindow, text='duty cycle')
+        label3 = tk.Label(mainwindow, text='other')
         label4 = tk.Label(mainwindow, text='launch control')
         label5 = tk.Label(mainwindow, text='gear info')
         label6 = tk.Label(mainwindow, text='car details')
@@ -273,6 +278,7 @@ class ToyotaSupra(ToyotaSupraInternals):
         button19 = tk.Button(mainwindow, text='simulator', fg='magenta', command=click18)
         button20 = tk.Button(mainwindow, text='Dyno numbers', fg='crimson', command=click17)
         button21 = tk.Button(mainwindow, text='Other Details', fg="lavender", command=click_19)
+        button22 = tk.Button(mainwindow, text="weight", fg="yellow", command=click_20)
 
         button1.grid(column=0, row=1, sticky='news')
         button2.grid(column=0, row=2, sticky='news')
@@ -295,6 +301,7 @@ class ToyotaSupra(ToyotaSupraInternals):
         button19.grid(column=1, row=6, sticky='news')
         button20.grid(column=5, row=5, sticky='news')
         button21.grid(column=0, row=6, sticky='news')
+        button22.grid(column=2, row=2, sticky='news')
 
         mainwindow.columnconfigure(0, weight=4)
         mainwindow.columnconfigure(1, weight=4)
@@ -321,28 +328,29 @@ class ToyotaSupra(ToyotaSupraInternals):
         self.boost_level = int(self.spring_pressure)
         self.duty_cycle = 103
         self.fuel_pressure = 90
-        self.timing_degrees = 0
+        self.timing_degrees = 10
         self.max_boost = 55
         self.two_step_RPM = 3900
         self.tyre_type = "Drag Radials"
         self.fuel_type = "89 Octane"
         self.tsd1 = {}
 
-    def maxboost(self, set_maxboost):
+    def set_max_boost(self, max_boost_pressure):
         """this sets the max boost pressure"""
-        if set_maxboost >= self.spring_pressure:
-            self.max_boost = set_maxboost
+        if self.spring_pressure <= max_boost_pressure <= 60:
+            self.max_boost = max_boost_pressure
 
-    def inc_timing(self, degrees_of_timing):
-        """this adds timing degrees to the car"""
-        if degrees_of_timing >= 16:
-            print('you don\'t want your valves hitting your pistons ')
-        else:
-            self.timing_degrees = degrees_of_timing
+    def advance_timing(self):
+        """this advances the timing to create more power """
+        self.timing_degrees = 14
+
+    def retard_timing(self):
+        """this retards the timing to create less power or less harmful emissions"""
+        self.timing_degrees = 8
 
     def inc_boost(self, boost):
         """this increases the boost pressures"""
-        if int(self.spring_pressure) <=  self.boost_level <= int(self.max_boost):
+        if int(self.spring_pressure) <= self.boost_level <= int(self.max_boost):
             self.boost_level += boost
 
         else:
@@ -364,62 +372,62 @@ class ToyotaSupra(ToyotaSupraInternals):
                     break
             break
 
-    def tsd_set1(self, number=None):
+    def tsd_set1(self):
         """this sets the dictionary tsd1 indexes to dictionaries"""
 
         for i in range(4200, 4501, 100):
             dict1 = dict()
-            dict1["1"] = 1.32 
-            dict1["2"] = 1.17 
-            dict1["3"] = 1.11 
-            dict1["4"] = 1.05 
-            dict1["5"] = 1.00 
-            dict1["6"] = .98  
-            dict1["7"] = 1.04 
-            dict1["8"] = 1.14 
+            dict1["1"] = 1.32  # above 25
+            dict1["2"] = 1.17  # 22 - 25
+            dict1["3"] = 1.11  # 19 - 22
+            dict1["4"] = 1.05  # 17-19
+            dict1["5"] = 1.00  # 17
+            dict1["6"] = .98  # 15-17
+            dict1["7"] = 1.04  # 12-15
+            dict1["8"] = 1.14  # bellow 12
 
             self.tsd1[i] = dict1
 
         for i in range(4000, 4200, 100):
             dict2 = dict()
-            dict2["1"] = 1.27  
-            dict2["2"] = 1.15  
-            dict2["3"] = 1.10  
-            dict2["4"] = 1.04  
-            dict2["5"] = 1.03  
-            dict2["6"] = 1.01  
-            dict2["7"] = 1.07  
-            dict2["8"] = 1.24  
+            dict2["1"] = 1.27  # above 25
+            dict2["2"] = 1.15  # 22 - 25
+            dict2["3"] = 1.10  # 19 - 22
+            dict2["4"] = 1.04  # 17-19
+            dict2["5"] = 1.03  # 17
+            dict2["6"] = 1.01  # 15-17
+            dict2["7"] = 1.07  # 12-15
+            dict2["8"] = 1.24  # bellow 12
 
             self.tsd1[i] = dict2
 
         for i in range(3700, 4000, 100):
             dict3 = dict()
-            dict3["1"] = 1.17  
-            dict3["2"] = 1.09  
-            dict3["3"] = 1.02  
-            dict3["4"] = 1.009 
-            dict3["5"] = 1.07  
-            dict3["6"] = 1.11  
-            dict3["7"] = 1.21  
-            dict3["8"] = 1.34  
+            dict3["1"] = 1.17  # above 25
+            dict3["2"] = 1.09  # 22 - 25
+            dict3["3"] = 1.02  # 19 - 22
+            dict3["4"] = 1.009  # 17-19
+            dict3["5"] = 1.07  # 17
+            dict3["6"] = 1.11  # 15-17
+            dict3["7"] = 1.21  # 12-15
+            dict3["8"] = 1.34  # bellow 12
 
             self.tsd1[i] = dict3
 
         for i in range(3500, 3700, 100):
             dict4 = dict()
-            dict4["1"] = 1.21  
-            dict4["2"] = 1.17  
-            dict4["3"] = 1.11  
-            dict4["4"] = 1.09  
-            dict4["5"] = 1.03  
-            dict4["6"] = 1.11  
-            dict4["7"] = 1.27  
-            dict4["8"] = 1.44  
+            dict4["1"] = 1.21  # above 25
+            dict4["2"] = 1.17  # 22 - 25
+            dict4["3"] = 1.11  # 19 - 22
+            dict4["4"] = 1.09  # 17-19
+            dict4["5"] = 1.03  # 17
+            dict4["6"] = 1.11  # 15-17
+            dict4["7"] = 1.27  # 12-15
+            dict4["8"] = 1.44  # bellow 12
 
             self.tsd1[i] = dict4
 
 OBBIE = ToyotaSupra()
 
-
-
+if __name__ == '__main__':
+    print(ToyotaSupraInternals.__name__)
